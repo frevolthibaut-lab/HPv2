@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Pré-diagnostic Hospitality Performance pour établissements CHR.">
+  <meta name="theme-color" content="#0B3D2E">
+  <title>Questionnaire dirigeant | HP V2</title><meta name="referrer" content="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --emerald:#0B3D2E;--emerald2:#125746;--black:#0F0F0E;--stone:#F6F4EF;
+      --paper:#FFFEFB;--graphite:#666864;--ink:#171916;--line:#DDD8CE;--gold:#B99A68;--danger:#B54A45
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(circle at 78% 5%,rgba(185,154,104,.10),transparent 28%),
+      linear-gradient(180deg,#f8f6f1,#f2eee7);
+      color:var(--ink);font-family:"Inter",system-ui,sans-serif;min-height:100vh}
+    .publicTop{min-height:116px;background:linear-gradient(135deg,#0f0f0e,#0b3d2e);color:#fff;display:flex;align-items:center;padding:0 max(28px,calc((100vw - 1080px)/2));border-bottom:1px solid rgba(255,255,255,.08)}
+    .publicIdentity{display:flex;align-items:center;gap:18px}
+    .publicMonogram{font:600 56px/1 "Playfair Display",Georgia,serif;letter-spacing:-.06em}
+    .publicBrand{font:600 25px/1.1 "Playfair Display",Georgia,serif}
+    .publicSub{font-size:11px;opacity:.62;margin-top:5px;letter-spacing:.08em;text-transform:uppercase}
+    .wrap{max-width:920px;margin:auto;padding:44px 18px 70px}
+    .brand{display:none}
+    .card{background:rgba(255,254,251,.97);border:1px solid var(--line);border-radius:13px;padding:42px 46px;box-shadow:0 18px 48px rgba(28,31,28,.07);position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--emerald),var(--gold))}
+    h1,h2{font-family:"Playfair Display",Georgia,serif;color:var(--black);letter-spacing:-.025em}
+    h1{font-size:42px;line-height:1.08;margin:0 0 14px;font-weight:600;max-width:760px}
+    h2{font-size:29px;margin:0 0 8px;font-weight:600}
+    .lead{color:var(--graphite);font-size:15px;line-height:1.7}
+    .pills{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+    .pill{background:#edf2ef;color:var(--emerald);border:1px solid #dce6e1;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700}
+    .bar{height:5px;background:#e7e2d9;border-radius:99px;overflow:hidden;margin-bottom:30px}
+    .fill{height:100%;background:linear-gradient(90deg,var(--emerald),var(--emerald2));transition:.2s}
+    .step{display:none}.step.on{display:block}
+    .k{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--emerald);margin-bottom:9px}
+    .field{margin:20px 0}.field label{display:block;font-weight:650;margin-bottom:8px;font-size:13px}
+    input,select,textarea{width:100%;font:inherit;padding:13px 14px;border:1px solid #cfc8bc;border-radius:7px;background:#fffefb;color:var(--ink)}
+    textarea{min-height:110px;resize:vertical}
+    input:focus,select:focus,textarea:focus{outline:0;border-color:var(--emerald2);box-shadow:0 0 0 3px rgba(18,87,70,.09)}
+    .actions{display:flex;justify-content:space-between;gap:10px;margin-top:30px}
+    .btn{border:0;border-radius:7px;padding:12px 19px;font-size:14px;font-weight:750;cursor:pointer}
+    .primary{background:var(--emerald);color:#fff}.primary:hover{background:var(--emerald2)}
+    .secondary{background:#efede7;color:var(--black)}
+    .btn:disabled{opacity:.5;cursor:wait}
+    .consent{display:flex!important;gap:10px;align-items:flex-start;font-size:13px;font-weight:500!important;line-height:1.5}.consent input{width:auto;margin-top:4px}
+    .hide{display:none!important}.error{color:var(--danger);font-size:13px;margin-top:12px;display:none}
+    .success{text-align:center;padding:38px 6px}.small{font-size:12px;color:var(--graphite)}
+    @media(max-width:640px){.publicTop{min-height:86px;padding:14px 18px}.publicMonogram{font-size:42px}.publicBrand{font-size:20px}.wrap{padding:18px 10px 40px}.card{padding:25px 21px}h1{font-size:32px}.actions .btn{flex:1}}
+  </style>
+
+<style id="hp-typography-final">
+/* =========================================================
+   HP TYPOGRAPHY — FROZEN GLOBAL SYSTEM
+   Dashboard typography applied everywhere.
+   No layout, spacing or navigation changes.
+   ========================================================= */
+
+/* Interface base */
+html,body,
+button,input,select,textarea,
+table,thead,tbody,tfoot,tr,th,td,
+label,.label,.muted,.small,.sub,.meta,
+.badge,.pill,.status,.count,
+.navItem,.tab,.btn,.actionBtn,.hp-export,
+.item,.item-title,.item-meta,
+.notice,.field,.k,.v,
+.cardLink,.rowTitle,.rowSub,.dateTxt,
+.statusPill,.alertBadge,.serviceFamily,
+.guideBlock,.guideWarn,.proposalService,
+.proposalReportMeta,.proposalReportDeliverables,
+.proposalReportReason{
+  font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+}
+
+/* Editorial hierarchy */
+h1,h2,h3,h4,
+.hero h1,.hero h2,.hero h3,
+.card h1,.card h2,.card h3,
+.panel h1,.panel h2,.panel h3,
+.detail h1,.detail h2,.detail h3,
+.sectiontitle,.section-title,
+.guideHero h3,.guideStep h4,
+.estPanel h3,.estCard h4,
+.proposalHead h4,.proposalPreview h5,
+.deliveryPlanHead h4,.deliveryService h5,
+.coverTitle,.reportTitle,
+.hp-page-title,
+.scoreValue b,.scoreValue span,
+.gauge span,
+.portfolioKpi b,
+.metric strong,.metric b,
+.estScoreBig strong,
+.econMetric b,
+.priorityNum,
+.hpMark,.brand,.publicBrand,.publicMonogram{
+  font-family:"Playfair Display",Georgia,"Times New Roman",serif!important;
+}
+
+/* Tabs and navigation must always remain UI typography */
+nav,.tabs,.tab,
+.sideNav,.navItems,.navItem,
+.hpWords,.sideEditorial small,
+button,.btn,
+select,input,textarea,
+table,th,td{
+  font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+}
+
+/* Consistent headline weights */
+h1{font-weight:600!important}
+h2,h3,h4{font-weight:600!important}
+
+/* Consistent UI weights */
+.tab,.navItem,button,.btn{font-weight:600!important}
+th,label,.badge,.pill,.statusPill{font-weight:600!important}
+
+/* Preserve editorial italic quotes */
+.scoreQuote,.sideEditorial em,
+blockquote,.editorialQuote{
+  font-family:"Playfair Display",Georgia,"Times New Roman",serif!important;
+}
+</style>
+
+</head>
+<body>
+<header class="publicTop">
+  <div class="publicIdentity">
+    <div class="publicMonogram">HP</div>
+    <div><div class="publicBrand">Hospitality Performance</div><div class="publicSub">Pré-diagnostic établissement</div></div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="brand">Hospitality Performance</div>
+  <div class="card">
+    <section id="intro">
+      <div class="k">Pré-diagnostic</div>
+      <h1>Identifions les principaux leviers de performance de votre établissement.</h1>
+      <p class="lead">Quelques informations factuelles pour préparer le diagnostic. Les données chiffrées peuvent être approximatives. Aucun document comptable n’est demandé.</p>
+      <div class="pills"><span class="pill">12–15 min</span><span class="pill">6 sections</span><span class="pill">Analyse humaine</span></div>
+      <p class="lead">Vos réponses permettent de concentrer l’analyse sur les sujets ayant le plus d’impact : performance, développement commercial, opérations et outils.</p>
+      <div class="actions"><span></span><button class="btn primary" type="button" id="start">Commencer</button></div>
+    </section>
+    <form id="form" class="hide" novalidate>
+      <div class="bar"><div class="fill" id="fill"></div></div>
+      <div id="steps"></div>
+      <div class="actions"><button class="btn secondary" type="button" id="back">Retour</button><button class="btn primary" type="button" id="next">Continuer</button></div>
+      <div class="error" id="error">L’envoi n’a pas abouti. Vérifiez les champs obligatoires puis réessayez.</div>
+    </form>
+    <section id="done" class="success hide">
+      <div class="k">Questionnaire transmis</div><h2>Merci.</h2>
+      <p class="lead">Vos réponses ont bien été enregistrées. Elles serviront à préparer votre diagnostic.</p>
+      <p class="small">Une première évaluation est préparée à partir de vos réponses. Le consultant vérifie le diagnostic avant la restitution.</p>
+    </section>
+  </div>
+</main>
+<script>
+const API="https://detntsypybaocojlqspo.supabase.co/functions/v1/diagnostic-submit";
+const invitation=new URLSearchParams(location.hash.slice(1)).get("invitation")||"";
+window.addEventListener('hashchange',()=>location.reload());
+const Q=[
+["establishment_name","Nom de l’établissement","text",1,"Identité"],
+["respondent_name","Votre nom","text",1,"Identité"],
+["respondent_role","Votre fonction","text",1,"Identité"],
+["respondent_email","Email professionnel","email",1,"Identité"],
+["respondent_phone","Téléphone (facultatif)","tel",0,"Identité"],
+["establishment_type","Type d’établissement","select",1,"Identité",["Restaurant","Bar / bar-restaurant","Hôtel","Lieu événementiel","Groupe multi-sites","Autre"]],
+["site_count","Nombre de sites","number",0,"Identité"],
+["employee_count","Effectif approximatif","number",0,"Identité"],
+["capacity","Capacité d’accueil approximative","number",0,"Identité"],
+["annual_revenue_band","CA annuel approximatif","select",0,"Activité & performance",["< 500 k€","500–700 k€","700 k€–1 M€","1–2 M€","2–5 M€","> 5 M€","Non communiqué"]],
+["knows_avg_ticket","Connaissez-vous votre ticket moyen actuel ?","select",0,"Activité & performance",["Oui","Non"]],
+["avg_ticket","Ticket moyen (€), si connu","number",0,"Activité & performance"],
+["kpi_frequency","À quelle fréquence consultez-vous vos KPI ?","select",0,"Activité & performance",["Quotidiennement","Chaque semaine","Chaque mois","Occasionnellement","Jamais"]],
+["margin_tracking","Suivez-vous le coût matière / les marges ?","select",0,"Activité & performance",["Oui, régulièrement","Partiellement","Rarement","Non"]],
+["has_dashboard","Disposez-vous d’un dashboard ou reporting de pilotage ?","select",0,"Activité & performance",["Oui, structuré et utilisé","Oui, mais irrégulier","Partiellement","Non"]],
+["productivity_tracking","Comment suivez-vous la productivité (heures travaillées par rapport au CA / à l’activité) ?","select",0,"Activité & performance",["Suivi régulier avec ratios et objectifs","Heures et CA suivis mais peu rapprochés","Suivi occasionnel","Pas de suivi"]],
+["top_problems","Quels sont aujourd’hui vos 3 principaux problèmes ou irritants ?","textarea",1,"Priorités"],
+["six_month_priority","Quel résultat souhaitez-vous prioritairement obtenir dans les 6 prochains mois ?","textarea",1,"Priorités"],
+["biggest_time_waste","Quelle tâche ou quel problème vous fait perdre le plus de temps chaque semaine ?","textarea",0,"Priorités"],
+["management_routines","Les responsables disposent-ils de routines de management (briefs, objectifs, points de suivi) ?","select",0,"Priorités",["Oui, formalisées et régulières","Oui, régulières mais peu formalisées","Partiellement / selon les responsables","Très peu ou pas du tout"]],
+["internal_communication","Comment les consignes et informations opérationnelles sont-elles partagées ?","select",0,"Priorités",["Canal commun, routines et informations tracées","Canal commun utilisé régulièrement","Plusieurs canaux / fonctionnement variable","Principalement à l’oral / non structuré"]],
+["onboarding_process","Comment se déroule l’intégration d’un nouveau collaborateur ?","select",0,"Priorités",["Parcours documenté et systématique","Parcours défini mais partiellement documenté","Transmission principalement informelle","Pas de parcours défini"]],
+["groups_significance","Les groupes / entreprises / événements représentent-ils un enjeu significatif ?","select",0,"Développement commercial",["Oui, majeur","Oui, secondaire","Peu","Pas actuellement"]],
+["monthly_group_leads","Nombre approximatif de demandes groupes / événements par mois","number",0,"Développement commercial"],
+["knows_conversion","Connaissez-vous votre taux devis → vente ?","select",0,"Développement commercial",["Oui, précisément","Approximativement","Non"]],
+["response_delay","Délai moyen de réponse commerciale","select",0,"Développement commercial",["< 2 h","2–6 h","Dans la journée","24–48 h","> 48 h","Variable / inconnu"]],
+["quote_followup","Comment relancez-vous les devis non signés ?","select",0,"Développement commercial",["Process systématique","Relances régulières mais non formalisées","Occasionnellement","Pas de relance structurée"]],
+["acquisition_process","Comment pilotez-vous l’acquisition de nouveaux clients ?","select",0,"Développement commercial",["Plusieurs canaux actifs avec résultats mesurés","Plusieurs canaux actifs mais suivi irrégulier","Acquisition surtout passive / bouche-à-oreille","Pas de démarche d’acquisition structurée"]],
+["pricing_review","Comment faites-vous évoluer vos offres et vos prix ?","select",0,"Développement commercial",["Revue régulière basée sur marges, demande et données","Revue régulière avec une partie des données","Ajustements occasionnels surtout intuitifs","Prix et offres très rarement revus"]],
+["loyalty_tracking","Comment suivez-vous la fidélisation et la récurrence client ?","select",0,"Développement commercial",["Suivi structuré avec données / CRM et actions","Suivi partiel avec quelques actions","Suivi principalement informel","Pas de suivi de la fidélisation"]],
+["procedures_documented","Vos procédures clés sont-elles documentées ?","select",0,"Opérations",["Oui, largement","Partiellement","Très peu","Non"]],
+["runs_without_owner","L’établissement peut-il fonctionner plusieurs jours sans intervention du dirigeant ?","select",0,"Opérations",["Oui, sans difficulté","Oui, avec quelques sollicitations","Difficilement","Non"]],
+["service_friction","Quel est le principal point de friction pendant le service ?","textarea",0,"Opérations"],
+["flow_process","Dans quelle mesure les flux de service (accueil, commande, production, encaissement, débarrassage) sont-ils structurés ?","select",0,"Opérations",["Flux définis, suivis et régulièrement optimisés","Flux globalement structurés avec quelques variations","Fonctionnement surtout basé sur les habitudes","Dysfonctionnements récurrents / flux non définis"]],
+["planning_process","Comment construisez-vous les plannings d’équipe ?","select",0,"Opérations",["À partir des prévisions d’activité et d’objectifs de productivité","À partir des prévisions d’activité, sans objectif de productivité formalisé","Principalement selon les habitudes / disponibilités","Sans méthode structurée"]],
+["pos_tool","Caisse / POS — quel outil utilisez-vous ? (ex. Cashpad, Lightspeed, Zelty, L’Addition…)","text",0,"Outils & données"],
+["reservation_tool","Réservations / gestion des tables — quel outil utilisez-vous ? (ex. Zenchef, TheFork, SevenRooms…)","text",0,"Outils & données"],
+["planning_hr_tool","Planning / RH — quel outil utilisez-vous ? (ex. Skello, Combo, Snapshift…)","text",0,"Outils & données"],
+["accounting_tool","Comptabilité / facturation — quel outil utilisez-vous ? (ex. Pennylane, Sage, Indy…)","text",0,"Outils & données"],
+["stock_purchasing_tool","Stocks / achats / coût matière — quel outil utilisez-vous ? (ex. Inpulse, Easilys, Yokitup…)","text",0,"Outils & données"],
+["crm_commercial_tool","CRM / devis / groupes / événements — quel outil utilisez-vous ?","text",0,"Outils & données"],
+["reporting_tool","Reporting / tableaux de bord / analyse — quel outil utilisez-vous ?","text",0,"Outils & données"],
+["other_tools","Autres outils importants utilisés dans l’établissement","textarea",0,"Outils & données"],
+["double_entry","Avez-vous des doubles saisies ou copier-coller entre outils ?","select",0,"Outils & données",["Oui, fréquemment","Oui, parfois","Très peu","Non"]],
+["existing_automation","Quelles tâches sont déjà automatisées ?","textarea",0,"Outils & données"],
+["automation_maturity","Quel est aujourd’hui votre niveau d’automatisation ?","select",0,"Outils & données",["Plusieurs automatisations fiables entre les outils","Quelques automatisations régulières","Une ou deux automatisations simples","Aucune automatisation"]],
+["consolidated_reporting","À quelle fréquence disposez-vous d’un reporting consolidé ?","select",0,"Outils & données",["Temps réel / quotidien","Hebdomadaire","Mensuel","Irrégulier","Jamais"]],
+["shareable_data","Quelles données pourriez-vous partager pour le diagnostic ?","textarea",0,"Outils & données"],
+["upcoming_constraints","Y a-t-il une contrainte ou un projet à venir à intégrer à l’analyse ?","textarea",0,"Outils & données"]
+];
+const sections=[...new Set(Q.map(q=>q[4]))], key="hp-v2-draft-"+invitation.slice(0,16); let step=0;
+const esc=x=>String(x).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+function render(){
+  document.getElementById("steps").innerHTML=sections.map((sec,i)=>{
+    const fields=Q.filter(q=>q[4]===sec).map(q=>{
+      let el;
+      if(q[2]==="textarea") el='<textarea name="'+q[0]+'" '+(q[3]?"required":"")+' maxlength="2500"></textarea>';
+      else if(q[2]==="select") el='<select name="'+q[0]+'" '+(q[3]?"required":"")+'><option value="">Sélectionner</option>'+q[5].map(o=>'<option value="'+esc(o)+'">'+esc(o)+'</option>').join("")+'</select>';
+      else el='<input name="'+q[0]+'" type="'+q[2]+'" '+(q[3]?"required":"")+(q[2]==="number"?' min="0" step="any"':' maxlength="180"')+'>';
+      return '<div class="field"><label>'+esc(q[1])+(q[3]?' *':'')+'</label>'+el+'</div>';
+    }).join("");
+    const consent=i===sections.length-1?'<div class="field"><label class="consent"><input type="checkbox" name="consent" required><span>J’accepte que les informations transmises soient utilisées pour préparer le diagnostic Hospitality Performance et assurer le suivi de la demande. *</span></label><input class="hide" name="website" tabindex="-1" autocomplete="off"></div>':"";
+    return '<section class="step" data-step="'+i+'"><div class="k">'+(i+1)+' / '+sections.length+'</div><h2>'+esc(sec)+'</h2>'+fields+consent+'</section>';
+  }).join("");
+  restore(); show();
+}
+function show(){
+  document.querySelectorAll(".step").forEach((e,i)=>e.classList.toggle("on",i===step));
+  document.getElementById("fill").style.width=((step+1)/sections.length*100)+"%";
+  document.getElementById("back").style.visibility=step===0?"hidden":"visible";
+  document.getElementById("next").textContent=step===sections.length-1?"Envoyer":"Continuer";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function validate(){const sec=document.querySelector('.step[data-step="'+step+'"]');for(const e of sec.querySelectorAll("input,select,textarea")){if(!e.checkValidity()){e.reportValidity();return false}}return true}
+function save(){const f=new FormData(document.getElementById("form")),o={};for(const[k,v]of f)o[k]=v;sessionStorage.setItem(key,JSON.stringify(o))}
+function restore(){try{const o=JSON.parse(sessionStorage.getItem(key)||"{}");for(const[k,v]of Object.entries(o)){const e=document.querySelector('[name="'+k+'"]');if(e){if(e.type==="checkbox")e.checked=v==="on";else e.value=v}}}catch{}}
+async function submit(){
+  const btn=document.getElementById("next"),err=document.getElementById("error");btn.disabled=true;btn.textContent="Envoi…";err.style.display="none";
+  const f=new FormData(document.getElementById("form")),data={};for(const[k,v]of f)data[k]=v;data.consent=document.querySelector('[name="consent"]').checked;
+  try{
+    const r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json","x-hp-invitation":invitation},body:JSON.stringify(data)});
+    if(!r.ok){const response=await r.json().catch(()=>({}));throw new Error(response.error||"Envoi indisponible.");}
+    sessionStorage.removeItem(key);document.getElementById("form").classList.add("hide");document.getElementById("done").classList.remove("hide");window.scrollTo({top:0,behavior:"smooth"});
+  }catch(e){err.textContent=e.message||"Envoi indisponible.";err.style.display="block";btn.disabled=false;btn.textContent="Envoyer"}
+}
+document.getElementById("start").onclick=()=>{document.getElementById("intro").classList.add("hide");document.getElementById("form").classList.remove("hide");render()};
+document.getElementById("back").onclick=()=>{save();step=Math.max(0,step-1);show()};
+document.getElementById("next").onclick=()=>{if(!validate())return;save();if(step===sections.length-1)submit();else{step++;show()}};
+
+async function checkInvitation(){
+ const btn=document.getElementById('start');btn.disabled=true;
+ const intro=document.getElementById('intro');
+ if(!/^[a-f0-9]{64}$/.test(invitation)){intro.innerHTML='<div class="k">Hospitality Performance</div><h1>Questionnaire sur invitation.</h1><p class="lead">Votre consultant vous transmettra un lien personnel pour remplir ce questionnaire.</p><a class="btn primary" href="dashboard.html">Accès consultant</a>';return;}
+ try{const r=await fetch(API,{headers:{'x-hp-invitation':invitation}});const d=await r.json();if(!r.ok)throw new Error(d.error||'Lien indisponible.');if(d.received){intro.classList.add('hide');document.getElementById('done').classList.remove('hide');sessionStorage.removeItem(key);}else btn.disabled=false;}
+ catch(e){intro.innerHTML='<h1>Lien indisponible.</h1><p class="lead">'+esc(e.message)+'</p>';}
+}
+checkInvitation();
+</script>
+</body>
+</html>
