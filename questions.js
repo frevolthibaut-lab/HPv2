@@ -493,3 +493,4 @@ export const questions=[
     "Outils & données"
   ]
 ];
+questions.push(...[["brand_vision","Quelle expérience souhaitez-vous faire vivre aux clients chez Carlo ?","textarea",0,"Prise de poste"],["delegated_decisions","Quelles décisions déléguez-vous au responsable des opérations et lesquelles souhaitez-vous valider ?","textarea",0,"Prise de poste"],["available_resources","Quels moyens et quelles contraintes faut-il intégrer au plan d’action ?","textarea",0,"Prise de poste"],["success_30_days","Quels résultats concrets attendez-vous à trente jours ?","textarea",0,"Prise de poste"],["success_90_days","Quels résultats concrets attendez-vous à trois mois ?","textarea",0,"Prise de poste"]]);
